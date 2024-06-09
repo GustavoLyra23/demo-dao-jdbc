@@ -28,5 +28,6 @@
         <jarDirectory url="file://C:/java-libs/jdbc-connectors/mysql-connector-j-8.4.0" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
   </component>
 </module>
