@@ -12,8 +12,6 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-
-
         System.out.println("=== TEST 1 ===");
         SellerDao sellerDao = DaoFactory.crateSellerDao();
         Seller seller = sellerDao.findById(3);
@@ -30,6 +28,7 @@ public class Main {
         for (Seller s : listaa) {
             System.out.println(s);
         }
-
+        System.out.println("=== TEST 4 Insert ===");
+        sellerDao.insert(seller);
     }
 }
