@@ -4,11 +4,14 @@ import model.entities.Department;
 import model.entities.Seller;
 
 import java.util.List;
+import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
 
         System.out.println("=== TEST 1 ===");
         SellerDao sellerDao = DaoFactory.crateSellerDao();
@@ -33,6 +36,11 @@ public class Main {
         seller = sellerDao.findById(1);
         seller.setName("Marta Wayne");
         sellerDao.update(seller);
+        System.out.println("\n=== TEST 6 Delete ===");
+        System.out.print("Enter id for delete test");
+        int id = sc.nextInt();
+        sellerDao.deleteById(id);
+        System.out.println("Delete Completed");
 
 
     }
