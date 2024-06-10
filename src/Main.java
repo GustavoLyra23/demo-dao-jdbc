@@ -1,7 +1,5 @@
-import db.DB;
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
-import model.dao.impl.SellerDaoJDBC;
 import model.entities.Department;
 import model.entities.Seller;
 
@@ -30,5 +28,12 @@ public class Main {
         }
         System.out.println("=== TEST 4 Insert ===");
         sellerDao.insert(seller);
+
+        System.out.println("=== TEST 5 Update ===");
+        seller = sellerDao.findById(1);
+        seller.setName("Marta Wayne");
+        sellerDao.update(seller);
+
+
     }
 }
