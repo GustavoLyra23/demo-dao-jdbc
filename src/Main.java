@@ -1,17 +1,14 @@
 import model.dao.DaoFactory;
-import model.dao.SellerDao;
+import model.dao.DepartmentDao;
 import model.entities.Department;
-import model.entities.Seller;
 
 import java.util.List;
-import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
+        /*Scanner sc = new Scanner(System.in);
 
         System.out.println("=== TEST 1 ===");
         SellerDao sellerDao = DaoFactory.crateSellerDao();
@@ -42,6 +39,23 @@ public class Main {
         sellerDao.deleteById(id);
         System.out.println("Delete Completed");
 
+    */
 
+        System.out.println("=== TESTE 1 INSERT ===");
+        DepartmentDao depjdbc = DaoFactory.crateDepartmentDao();
+        depjdbc.insert(new Department(5, "Departamento"));
+
+        System.out.println("=== TESTE 2 GET BY ID ===");
+        System.out.println(depjdbc.getById(1));
+
+        System.out.println("=== TESTE 3 DELETE BY ID ===");
+        depjdbc.deleteById(8);
+
+        System.out.println("=== TESTE 4 UPDATE ===");
+        depjdbc.update(new Department(5, "Gustavo Lyra department"));
+
+        System.out.println("=== TESTE 5 FINDALL ===");
+        List<Department> dep_list = depjdbc.findAll();
+        dep_list.forEach(System.out::println);
     }
 }

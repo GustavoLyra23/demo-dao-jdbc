@@ -5,7 +5,6 @@ import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 
-import java.nio.channels.InterruptedByTimeoutException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
